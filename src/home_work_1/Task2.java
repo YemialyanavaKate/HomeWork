@@ -1,4 +1,4 @@
-package HomeWork1;
+package home_work_1;
 
 public class Task2 {
     public static void main(String[] args) {
@@ -10,19 +10,19 @@ public class Task2 {
         int m = 2;
         int a3 = (5 + m++) / k;
 
-        int t = 2;
-        int a4 = (5 + t++) / --k;
+        m = 2;
+        int a4 = (5 + m++) / --k;
 
-        int k1 = 8;
-        int t1 = 2;
-        int a5 = (5 * 2 >> t1++) / --k1;
+        m = 2;
+        k = 8;
+        int a5 = (5 * 2 >> m++) / --k;
 
-        int k2 = 8;
-        int t2 = 2;
-        int a6 = (5 + 7 > 20 ? 68 : 22 * 2 >> t2++) / --k2;
+        m = 2;
+        k = 8;
+        int a6 = (5 + 7 > 20 ? 68 : 22 * 2 >> m++) / --k;
 
-        int k3 = 8;
-        int t3 = 2;
+        m = 8;
+        k = 2;
         // int a7 = (5 + 7 > 20 ? 68 >= 68 : 22 * 2 >> t3++) / --k3; // оператор '/' не можeт быть применен, т.к. значение в скобках может быть типа boolean
 
         boolean a8 = 6 - 2 > 3 && 12 * 12 <= 119;

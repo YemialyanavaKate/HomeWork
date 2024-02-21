@@ -1,6 +1,6 @@
 package home_work_1;
 
-public class Task1New {
+public class Task1_3 {
     public static void main(String[] args) {
         float x = 42.5f; // побитовые операторы могут быть примерены только к целочисленным типам
         int y = 16; // 00010000

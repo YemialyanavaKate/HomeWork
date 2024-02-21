@@ -1,4 +1,4 @@
-package HomeWork1;
+package home_work_1;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -10,17 +10,15 @@ public class Task6_1 {
         System.out.println("Введите ваше имя:");
         String name = scanner.nextLine();
 
-        String friend1 = "Вася";
-        String friend2 = "Анастасия";
-
-        if (Objects.equals(name, friend1) ) {
+        if (Objects.equals(name, "Вася")) {
             System.out.println("Привет!");
             System.out.println("Я тебя так долго ждал!");
-        }
-         if ((Objects.equals(name, friend2))) {
+        } else {
+            if (Objects.equals(name, "Анастасия")) {
                 System.out.println("Я тебя так долго ждал!");
-         } else {
-             System.out.println("Добрый день, а кто вы?");
-         }
-         }
+            } else {
+                System.out.println("Добрый день, а кто вы?");
+            }
+        }
     }
+}
