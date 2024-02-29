@@ -1,4 +1,4 @@
-package home_work_2.arrays;
+package home_work_2.utils;
 
 import java.util.Scanner;
 
@@ -12,10 +12,7 @@ public class ArraysUtils {
         for (int i = 0; i < size; i++) {
             array[i] = console.nextInt();
         }
-        //System.out.println("Массив содержит элементы: ");
-        //for (int i = 0; i < size; i++) {
-        //  System.out.print(array[i] + " ");
-        //}
+
         System.out.println();
         return array;
     }
@@ -26,10 +23,6 @@ public class ArraysUtils {
             for (int i = 0; i < size; i++) {
                 array[i] = c + (int) (Math.random() * maxValueExclusion);
             }
-            //System.out.println("Массив содержит элементы: ");
-            //for (int i = 0; i < size; i++) {
-            //    System.out.print(array[i] + " ");
-            //}
             System.out.println();
             return array;
     }

@@ -1,6 +1,6 @@
 package home_work_2.sorts;
 
-import home_work_2.arrays.ArraysUtils;
+import home_work_2.utils.ArraysUtils;
 
 import static home_work_2.utils.SortsUtils.shake;
 import static home_work_2.utils.SortsUtils.sort;
