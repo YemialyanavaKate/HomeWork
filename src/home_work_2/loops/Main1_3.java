@@ -13,6 +13,6 @@ public class Main1_3 {
         for ( int x = 1; x <= b; x++) {
             result = result * a;
         }
-        System.out.println("a в степени b = " + result);
+        System.out.println(a + " ^ " + b + " = " + result);
     }
 }

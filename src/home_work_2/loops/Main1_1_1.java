@@ -2,7 +2,7 @@ package home_work_2.loops;
 
 import java.util.Scanner;
 
-public class Main1 {
+public class Main1_1_1 {
 
     public static final int MIN_NUMERIC_FOR_INPUT = 1;
 
@@ -18,12 +18,14 @@ public class Main1 {
         if (checkInput) {
             System.out.println("Ошибка, введите значение от 1 и выше");
         }
-        while (i < number) {
+        if (!checkInput) {
+            while (i < number) {
+                f = f * i;
+                System.out.print(i + "*");
+                i++;
+            }
             f = f * i;
-            System.out.print(i + "*");
-            i++;
+            System.out.println(number + "=" + f);
         }
-        f = f * i;
-        System.out.println(number + "=" + f);
     }
 }
