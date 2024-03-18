@@ -2,7 +2,7 @@ package home_work_2.loops;
 
 import java.util.Scanner;
 
-public class Main1_3 {
+public class  Main1_3 {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.println("Введите дробное число, которое будем возводить в степень a=");
