@@ -8,11 +8,8 @@ import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoCompositeInterfaceMain {
     public static void main(String[] args) {
-        CalculatorWithCounterAutoAgregationInterface calc11New = new CalculatorWithCounterAutoAgregationInterface(new CalculatorWithOperator());
-        /*CalculatorWithCounterAutoAgregationInterface calc12New = new CalculatorWithCounterAutoAgregationInterface(new CalculatorWithMathCopy());
-        CalculatorWithCounterAutoAgregationInterface calc13New = new CalculatorWithCounterAutoAgregationInterface(new CalculatorWithMathExtends());
-
-        ICalculator[] = new ICalculator[3]; */
+        ICalculator calc11I = new CalculatorWithOperator();
+        CalculatorWithCounterAutoAgregationInterface calc11New = new CalculatorWithCounterAutoAgregationInterface(calc11I);
 
         double var1 = calc11New.divide(28, 5); //5,60
         double var2 = calc11New.pow(var1, 2); //31,36
@@ -21,7 +18,6 @@ public class CalculatorWithCounterAutoCompositeInterfaceMain {
         double result = calc11New.add(var4, 4.1); //140,46
 
         long i = calc11New.getI();
-
 
         System.out.printf("%.2f\n", var1);
         System.out.printf("%.2f\n", var2);
