@@ -16,7 +16,7 @@ public class CalculatorWithCounterDelegateCompositeMain {
        double var4 = calc6new.add(var2, var3); //136,36
        double result = calc6new.add(var4, 4.1); //140,46
 
-       long i = calc6new.getI();
+       long i = calc6new.getCountOperation();
 
         System.out.printf("%.2f\n", var1);
         System.out.printf("%.2f\n", var2);

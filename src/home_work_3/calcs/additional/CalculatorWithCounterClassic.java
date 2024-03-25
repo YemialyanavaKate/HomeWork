@@ -10,5 +10,5 @@ public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
     public long getCountOperation() {
 
         return i;
-    }
+     }
 }

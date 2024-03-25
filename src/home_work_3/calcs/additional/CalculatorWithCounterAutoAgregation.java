@@ -6,8 +6,7 @@ public class CalculatorWithCounterAutoAgregation {
 
     private CalculatorWithMathCopy calc7;
     public CalculatorWithCounterAutoAgregation (CalculatorWithMathCopy someCalculatorWithMathCopy) {
-
-        calc7 = someCalculatorWithMathCopy;
+        this.calc7 = someCalculatorWithMathCopy;
     }
     private int i = 0;
 
