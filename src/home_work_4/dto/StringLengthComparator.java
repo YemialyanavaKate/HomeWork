@@ -1,14 +1,11 @@
 package home_work_4.dto;
 
-import home_work_4.api.IComparator;
+import java.util.Comparator;
 
-public class StringLengthComparator {
-    private IComparator comparator;
-     public StringLengthComparator (IComparator somecomparator) {
-         this.comparator = somecomparator;
-     }
+public class StringLengthComparator implements Comparator<String> {
 
-     /*public String sort () {
-         return comparator.sorting();
-     }*/
+    @Override
+    public int compare(String o1, String o2) {
+        return o1.length() - o2.length();
+    }
 }

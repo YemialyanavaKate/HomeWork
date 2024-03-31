@@ -1,10 +1,12 @@
 package home_work_4;
 
 import home_work_4.dto.DataContainer;
+import home_work_4.dto.StringAlphabeticComparator;
+import home_work_4.dto.StringLengthComparator;
 
 public class MainDataContainerString {
     public static void main(String[] args) {
-        String[] data1 = new String[10];
+        String[] data1 = new String[4];
         DataContainer<String> container = new DataContainer<>(data1);
         int index1 = container.add("Привет");
         int index2 = container.add("Как дела");
@@ -20,6 +22,10 @@ public class MainDataContainerString {
         System.out.println(text4);
         container.delete(text1);
         System.out.println(container.get(index1));
+        container.sort(new StringLengthComparator());
+        System.out.println(container);
+        container.sort(new StringAlphabeticComparator());
+        System.out.println(container);
 
     }
 }

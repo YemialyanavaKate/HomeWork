@@ -1,8 +1,8 @@
 package home_work_4;
 
-import home_work_4.api.IComparator;
 import home_work_4.dto.DataContainer;
 import home_work_4.dto.NumberComparator;
+import home_work_4.dto.StringLengthComparator;
 
 public class MainDataContainerSortTask9 {
     public static void main(String[] args) {
@@ -13,26 +13,33 @@ public class MainDataContainerSortTask9 {
         System.out.print("Исходный массив: ");
         soutArray(container9_1);
 
-        IComparator comparatorI = new NumberComparator();
-        //DataContainer comparatorNew = new DataContainer(comparatorI);
-
-       // container9_1.sort(new NumberComparator());
+        container9_1.sort(new NumberComparator());
         System.out.print("Отсортированный массив: ");
         soutArray(container9_1);
-    }
 
-   /* public static void sort(DataContainer<Integer> container, int index) {
+        String[] data9_2 = {"i", "hello", "1", "Как домашка" };
+
+        DataContainer<String> container9_2 = new DataContainer<>(data9_2);
         System.out.print("Исходный массив: ");
-        soutArray(container);
-        container.sort(new NumberComparator());
+        soutArrayString(container9_2);
+
+        container9_2.sort(new StringLengthComparator());
         System.out.print("Отсортированный массив: ");
-        soutArray(container);
-        }*/
+        soutArrayString(container9_2);
+    }
 
     public static void soutArray(DataContainer<Integer> container) {
         for (int i = 0; i < container.getItems().length; i++) {
             Integer element = container.getItems()[i];
                 System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void soutArrayString(DataContainer<String> container) {
+        for (int i = 0; i < container.getItems().length; i++) {
+            String element = container.getItems()[i];
+            System.out.print(element + " ");
         }
         System.out.println();
     }

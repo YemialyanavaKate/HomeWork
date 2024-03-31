@@ -1,15 +1,13 @@
 package home_work_4.dto;
 
-import home_work_4.api.IComparator;
-
 import java.util.Arrays;
+import java.util.Comparator;
 
 
 public class DataContainer<T> {
     private T[] data;
     private int i = 0;
     private int index;
-    private IComparator comparator;
 
     public DataContainer(T[] data) {
         this.data = data;
@@ -83,7 +81,8 @@ public class DataContainer<T> {
                 return false;
             }
             if (index == 0 && data[0].equals(item)) {
-                data = Arrays.copyOfRange(data, 1, data.length - 1);
+                data = Arrays.copyOfRange(data, 1, data.length
+                );
                 return true;
             }
             if (index == data.length - 1) {
@@ -100,10 +99,17 @@ public class DataContainer<T> {
         }
     }
 
-    /* public void sort (IComparator <T> comparator) {
-         this.comparator = comparator;
-
-     }*/
+    public void sort (Comparator<T> comparator) {
+        for (int i = 0; i < data.length - 1; i++) {
+            for (int j = (data.length - 1); j > i; j--) {
+                if (comparator.compare(data[j-1], data[j]) > 0) {
+                    T temp = data[j - 1];
+                    data[j - 1] = data[j];
+                    data[j] = temp;
+                }
+            }
+        }
+    }
     @Override
     public String toString() {
         String array = "[";
