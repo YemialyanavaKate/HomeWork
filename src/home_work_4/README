@@ -1,0 +1,16 @@
+MainDataContainerString - пример использования для String
+DataContainer - класс с данными обобщенного типа (задачи 1-10);
+MainDataContainerAdd - задание 4;
+MainDataContainerGet - задание 5:
+MainDataContainerDeleteTask7 - задание 7;
+MainDataContainerDeleteTask8 - задание 8;
+MainDataContainerSortTask9 - задание 9;
+MainDataContainerToStringTask10 - задание 10;
+MainDataContainerSortTask11 - задание 11;
+NumberComparator - реализация интерфейса Comparator для объектов типа Integer;
+StringAlphabeticComparator - реализация интерфейса Comparator для объектов типа String (Сортируется по алфавиту);
+StringLengthComparator - реализация интерфейса Comparator для объектов типа String (Сортируется по длинне строки);
+
+
+
+

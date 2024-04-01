@@ -13,6 +13,7 @@ public class DataContainer<T> {
         this.data = data;
     }
 
+
     public int add(T item) {
 
         if (item == null) {
@@ -122,5 +123,16 @@ public class DataContainer<T> {
         array += "]";
             return array;
         }
+       /* public static <? extends Comparable<T>> void  sort(DataContainer<T> container){
+            for (int i = 0; i < container.getItems().length - 1; i++) {
+                for (int j = (container.getItems().length - 1); j > i; j--) {
+                    if (container.getItems()[j].compareTo(container.getItems()[j-1]) > 0) {
+                        T temp = container.getItems()[j - 1];
+                        container.getItems()[j - 1] = container.getItems()[j];
+                        container.getItems()[j] = temp;
+                    }
+                }
+            }
+        };*/
     }
 
