@@ -9,8 +9,8 @@ public class Task3 {
         int a = console.nextInt();
         int aModul = Math.abs(a);
 
-        System.out.println("Введите значение 'b' ");
-        int b = console.nextInt();
+        /*System.out.println("Введите значение 'b' ");
+        int b = console.nextInt();*/
         double aSqure = Math.pow(a, 2);
 
         System.out.println("Модуль числа 'a' " + aModul);

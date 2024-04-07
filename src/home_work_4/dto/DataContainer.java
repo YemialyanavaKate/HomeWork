@@ -113,15 +113,21 @@ public class DataContainer<T> {
     }
     @Override
     public String toString() {
-        String array = "[";
-        for ( int i = 0; i < data.length; i++ ) {
-            if (data[i] != null) {
-            array += data[i];
-            array += " ";
+        StringBuilder array = new StringBuilder();
+        array.append('[');
+        boolean needComma = false;
+        for (T datum : data) {
+            if (datum != null) {
+                if (needComma) {
+                    array.append(", ");
+                } else {
+                    needComma = true;
+                }
+                array.append(datum);
+            }
         }
-        }
-        array += "]";
-            return array;
+        array.append(']');
+            return array.toString();
         }
        /* public static <? extends Comparable<T>> void  sort(DataContainer<T> container){
             for (int i = 0; i < container.getItems().length - 1; i++) {
