@@ -5,54 +5,23 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class Main1_1_1_Test {
-    public static final int MIN_NUMERIC_FOR_INPUT = 1;
+    //public static final int MIN_NUMERIC_FOR_INPUT = 1;
 
-    @DisplayName("Факториал положительного числа")
+    @DisplayName("Факториал числа 5")
     @Test
-    public void testFactorial(){
-
-        boolean checkInput;
-        int i = 1;
-        int f = 1;
-
-        int number = 5;
-        checkInput = number < MIN_NUMERIC_FOR_INPUT;
-        if (checkInput) {
-            System.out.println("Ошибка, введите значение от 1 и выше");
-        }
-        if (!checkInput) {
-            while (i < number) {
-                f = f * i;
-                System.out.print(i + "*");
-                i++;
-            }
-            f = f * i;
-            System.out.println(number + "=" + f);
-        }
-        Assertions.assertEquals(120, f);
+    public void testFactorialFive(){
+        Assertions.assertEquals(120, Main1_1_1.factorial(5));
     }
 
-    @DisplayName("Факториал отрицательного")
+    @DisplayName("Факториал числа 1")
     @Test
-    public void testFactorialNegative(){
+    public void testFactorialOne(){
+        Assertions.assertEquals(1, Main1_1_1.factorial(1));
+    }
 
-        boolean checkInput;
-        int i = 1;
-        int f = 1;
-
-        int number = -10;
-        checkInput = number < MIN_NUMERIC_FOR_INPUT;
-        if (checkInput) {
-            System.out.println("Ошибка, введите значение от 1 и выше");
-        }
-        if (!checkInput) {
-            while (i < number) {
-                f = f * i;
-                System.out.print(i + "*");
-                i++;
-            }
-            f = f * i;
-            System.out.println(number + "=" + f);
-        }
+    @DisplayName("Факториал числа 6")
+    @Test
+    public void testFactorialSix(){
+        Assertions.assertEquals(720, Main1_1_1.factorial(6));
     }
 }
