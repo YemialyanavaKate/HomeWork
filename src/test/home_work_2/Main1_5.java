@@ -1,12 +1,10 @@
-package home_work_2.loops;
+package test.home_work_2;
 
 import java.util.Scanner;
 
 public class Main1_5 {
-    public static void main(String[] args) {
-            Scanner console = new Scanner(System.in);
-            System.out.println("Введите натуральное число a=");
-            int a = console.nextInt();
+    public static int main5_1(int a) {
+
             int m = a % 10;
             a = a / 10;
 
@@ -16,15 +14,15 @@ public class Main1_5 {
                 a = a / 10;
             }
             System.out.println("Наибольшая цифра введенного числа = " + m);
+            return m;
 
-      //  main5_2();
+        /*main5_2();
         main5_3();
-        //main5_4();
-        //main5_5();
-        //main5_6();
+        main5_4();
+        main5_5();
+        main5_6();*/
         }
-
-        static void main5_2(){
+        public static float main5_2(){
             int z = 0 ;
             int c = 0;
             int b = 100;
@@ -35,12 +33,11 @@ public class Main1_5 {
                 }
             }
             System.out.printf("Вероятность четных случайных чисел в процентах от общего колличества "+"%.2f\n",(float)z/1000*100);
+            return (float)z/1000*100;
             }
 
-        static void main5_3() {
-        Scanner console1_5_3 = new Scanner(System.in);
-        System.out.println("Введите натуральное число k=");
-        int k = console1_5_3.nextInt();
+        public static int main5_3(int k) {
+
         int even = 0;
         int odd = 0;
 
@@ -54,12 +51,11 @@ public class Main1_5 {
         }
         System.out.println("Четных цифр в вашем числе = " + even);
         System.out.println("Нечетных цифр в вашем числе = " + odd);
+        int sum = even + odd;
+        return sum;
         }
 
-        static void main5_4() {
-            Scanner console1_5_4 = new Scanner(System.in);
-            System.out.println("Сколько цифр ряда Фибоначчи вывести на экран? ");
-            int f = console1_5_4.nextInt();
+        public static void main5_4(int f) {
             int f1 = 1;
             int f2 = 2;
             int b1;
@@ -74,14 +70,7 @@ public class Main1_5 {
             System.out.print("\n");
         }
 
-        static void main5_5() {
-        Scanner console1_5_5 = new Scanner(System.in);
-        System.out.println("Введите натуральное число: минимальное число ряда min=");
-        int min = console1_5_5.nextInt();
-        System.out.println("Введите натуральное число: максимальное число ряда max=");
-        int max = console1_5_5.nextInt();
-        System.out.println("Введите натуральное число: шаг числового ряда step=");
-        int step = console1_5_5.nextInt();
+        public static void main5_5(int min, int max, int step) {
 
         for (int m = min; min <= max; min += step) {
             System.out.print(min + " ");
@@ -89,10 +78,7 @@ public class Main1_5 {
             System.out.print("\n");
         }
 
-        static void main5_6() {
-        Scanner number = new Scanner(System.in);
-        System.out.println("Введите натуральное число p=");
-        int p = number.nextInt();
+        static void main5_6(int p) {
         int r = p % 10;
         p = p / 10;
 
