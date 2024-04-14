@@ -20,5 +20,12 @@ public class Main1_3_Test {
 
         Assertions.assertEquals(56.25, Main1_3.pow(7.5,2));
     }
+
+    @DisplayName("Для возводимого 1.7 и степени 4")
+    @Test
+    public void testThree(){
+
+        Assertions.assertEquals(8.352099999999998, Main1_3.pow(1.7,4));
+    }
     }
 

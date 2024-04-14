@@ -3,9 +3,8 @@ package test.home_work_1;
 import test.home_work_1.api.ICommunicationPrinter;
 
 import java.util.Objects;
-import java.util.Scanner;
 
-public class Task6_2 implements ICommunicationPrinter {
+public class Task6_2New implements ICommunicationPrinter {
     @Override
     public String welcom(String name) {
         if (Objects.equals(name, "Вася")) {

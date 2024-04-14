@@ -14,11 +14,11 @@ public class Main1_5_Test {
         Assertions.assertEquals(8, Main1_5.main5_1(86731));
     }
 
-    @DisplayName("1.5.1. Найти наибольшую цифру натурального числа 49367")
+    @DisplayName("1.5.1. Найти наибольшую цифру натурального отрицательнчисла 49367")
     @Test
     public void testOneFiveOne2(){
 
-        Assertions.assertEquals(9, Main1_5.main5_1(49367));
+        Assertions.assertEquals(9, Main1_5.main5_1(-49367));
     }
 
     @DisplayName("1.5.1. Найти наибольшую цифру натурального числа 2222")
@@ -58,36 +58,37 @@ public class Main1_5_Test {
 
     @DisplayName("1.5.4. Ряд Фибоначчи, вывести 5 цифр")
     @Test
-    public void testOneFiveFour(){
-       // Main1_5.main5_4(5);
-
-        /*public static String main5_4(int f) {
-        int f1 = 1;
-        int f2 = 2;
-        int b1;
-        String text;
-        System.out.printf("%d %d ", f1, f2);
-        int[] array = new int[f];
-        array[0] = f1;
-        array[1] = f2;
-
-        for (int i = 3; i <= f; i++) {
-            array[i] = f1 + f2;
-            System.out.print(f1 + f2 + " ");
-            b1 = f1;
-            f1 = f2;
-            f2 = b1 + f1;
-            text = Arrays.toString(array);
-            System.out.println(text);
-            System.out.print("\n");
-        }
-        return text;
-    }*/
+    public void testOneFiveFour1(){
+        System.out.println(Main1_5.main5_4(5));
+        Assertions.assertEquals("1 2 3 5 8", Main1_5.main5_4(5));
     }
-    @DisplayName("1.5.5. Вывести ряд чисел в диапазоне с шагом")
+
+    @DisplayName("1.5.4. Ряд Фибоначчи, вывести 6 цифр")
     @Test
-    public void testOneFiveFive(){
-       // Main1_5.main5_5(5, 25, 3);
+    public void testOneFiveFour2(){
+        System.out.println(Main1_5.main5_4(6));
+        Assertions.assertEquals("1 2 3 5 8 13", Main1_5.main5_4(6));
     }
+    @DisplayName("1.5.5. Вывести ряд чисел в диапазоне с шагом: min:5, max:15, step:3)")
+    @Test
+    public void testOneFiveFive1(){
+        System.out.println(Main1_5.main5_5(5, 25, 3));
+        Assertions.assertEquals("5 8 11 14 ", Main1_5.main5_5(5, 15, 3));
+    }
+
+    @DisplayName("1.5.5. Вывести ряд чисел в диапазоне с шагом: min:7, max:18, step:4")
+    @Test
+    public void testOneFiveFive2(){
+        System.out.println(Main1_5.main5_5(7, 18, 4));
+        Assertions.assertEquals("7 11 15 ", Main1_5.main5_5(7, 18, 4));
+    }
+
+    @DisplayName("1.5.5. Вывести ряд чисел в диапазоне с шагом: min:7, max:18, step:4")
+    @Test
+    public void testOneFiveSix1(){
+        Assertions.assertEquals("12817", Main1_5.main5_6(71821));
+    }
+
+
     }
 

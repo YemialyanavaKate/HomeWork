@@ -8,14 +8,14 @@ public class Task6Test {
     @Test
     public void TestTask6_1() {
 
-        Task6_1 hello1 = new Task6_1();
+        Task6_1New hello1 = new Task6_1New();
         hello1.welcom("Вася");
     }
     @DisplayName("Task6_2 - приветствие для Анастасии")
     @Test
     public void TestTask6_2() {
 
-        Task6_2 hello2 = new Task6_2();
+        Task6_2New hello2 = new Task6_2New();
         hello2.welcom("Анастасия");
 
     }
@@ -24,8 +24,8 @@ public class Task6Test {
     @Test
     public void TestTask6_3() {
 
-        Task6_2 hello2 = new Task6_2();
-        hello2.welcom("Катя");
+        Task6_2New hello3 = new Task6_2New();
+        hello3.welcom("Катя");
 
     }
 

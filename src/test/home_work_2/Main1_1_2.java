@@ -8,14 +8,18 @@ public class Main1_1_2 {
         if (number == 1) {
             return 1;
         }
-
-        return recursion(number - 1) * number;
+        int f = recursion(number - 1) * number;
+        return f;
     }
 
-        /*public static void main(String[] args) {
-            Scanner console = new Scanner(System.in);
-            System.out.println("Введите целое положительное число:");
-            int number = Integer.parseInt(console.nextLine());
-            System.out.println(recursion(number));
-    }*/
+        public static void print (int a) {
+        int i = 1;
+        while (i <= a) {
+            System.out.print(i);
+            if (i != a){
+                System.out.print(" * ");
+            }
+            i++;
+        }
+    }
 }
