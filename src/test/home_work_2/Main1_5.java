@@ -70,6 +70,9 @@ public class Main1_5 {
             }
 
         public static String main5_6(int p) {
+        if (p < 0) {
+            p = Math.abs(p);
+        }
         int r = p % 10;
         p = p / 10;
         String  message = "";

@@ -83,12 +83,22 @@ public class Main1_5_Test {
         Assertions.assertEquals("7 11 15 ", Main1_5.main5_5(7, 18, 4));
     }
 
-    @DisplayName("1.5.5. Вывести ряд чисел в диапазоне с шагом: min:7, max:18, step:4")
+    @DisplayName("1.5.6. Переворот числа 71821")
     @Test
     public void testOneFiveSix1(){
         Assertions.assertEquals("12817", Main1_5.main5_6(71821));
     }
 
+    @DisplayName("1.5.6. Переворот числа 0")
+    @Test
+    public void testOneFiveSix2(){
+        Assertions.assertEquals("0", Main1_5.main5_6(0));
+    }
 
+    @DisplayName("1.5.6. Переворот числа -5621")
+    @Test
+    public void testOneFiveSix3(){
+        Assertions.assertEquals("1265", Main1_5.main5_6(-5621));
+    }
     }
 

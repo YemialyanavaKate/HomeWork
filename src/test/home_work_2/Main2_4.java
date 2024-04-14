@@ -5,14 +5,6 @@ import home_work_2.utils.ArraysUtils;
 import java.util.Scanner;
 
 public class Main2_4 {
-    public static void main(String[] args) {
-        /*main2_4_1();
-        main2_4_2();
-        main2_4_3();
-        main2_4_4();
-        main2_4_5();
-        main2_4_6();*/
-    }
 
     static int main2_4_1(int[] container) {
         int sumEwen = 0;
@@ -44,9 +36,10 @@ public class Main2_4 {
         return max;
     }
 
-    static void main2_4_3(int[] container) {
+    static String main2_4_3(int[] container) {
         int sum = 0;
         double avrg;
+        String  message = "";
 
         for (int i = 0; i < container.length; i++) {
             int element = container[i];
@@ -54,85 +47,75 @@ public class Main2_4 {
         }
         avrg = sum * 1.0/ container.length;
         System.out.printf("Среднее арифметическое массива:%.2f\n ",avrg);
-        System.out.print("Элементы массива, которые меньше среднего арифметческого:");
 
         for (int i = 0; i < container.length; i++) {
             int element = container[i];
             if (element < avrg) {
-                System.out.print(element + " ");
+                message = message + element + " ";
             }
         }
-        System.out.println();
+        System.out.print("Элементы массива, которые меньше среднего арифметческого:" + message);
+        return message;
     }
 
-    static void main2_4_4() {
-        int[] container = ArraysUtils.arrayRandome(50, 100);
+    static String main2_4_4(int[] container) {
+        String  message = "";
+        int min1 = 0;
+        int i;
+        int min2;
 
-        System.out.println("Массив содержит элементы: ");
-        for (int i = 0; i < container.length; i++) {
-            System.out.print(container[i] + " ");
+        if (container.length == 1){
+            return message = message + container[0];
         }
 
-            int min1 = 0;
-            int i;
-            int min2;
-
-            for (i = 0; i < container.length; i++) {
-                if (container[i] < container[min1]) {
-                    min1 = i;
-                }
+        if (container.length == 2){
+            return message = message + container[0] + " " + container[1];
+        }
+        for (i = 0; i < container.length; i++) {
+            if (container[i] < container[min1]) {
+                min1 = i;
             }
-            if (min1 == 0) {
-                min2 = 1;
-            } else {
-                min2 = 0;
-            }
+        }
+        if (min1 == 0) {
+            min2 = 1;
+        } else {
+            min2 = 0;
+        }
 
-            for (i = 0; i < container.length; i++) {
-                if (i != min1) {
-                    if (container[i] < container[min2]) {
-                        min2 = i;
+        for (i = 0; i < container.length; i++) {
+            if (i != min1) {
+                if (container[i] < container[min2]) {
+                    min2 = i;
                     }
-                }
             }
-        System.out.println("Минимумы: " + container[min1] + " и " + container[min2]);
+        }
+        message = message + container[min1] + " " + container[min2];
+        return message;
     }
 
-    static void main2_4_5() {
-        int[] container = ArraysUtils.arrayRandome(50, 100);
+    static String main2_4_5(int[] container, int l1, int l2) {
 
-        System.out.println("Массив содержит элементы: ");
-        for (int i = 0; i < container.length; i++) {
-          System.out.print(container[i] + " ");
-        }
-
-        Scanner console = new Scanner(System.in);
-        System.out.println("Введите границы удаляемого диапазона: от ");
-        int l1 = console.nextInt();
-        System.out.println("Введите границы удаляемого диапазона: до ");
-        int l2 = console.nextInt();
+        String  message = "";
         int j;
-        //int k = 0;
         int i = 0;
-        int m = container.length;
-        while (i < m) {
-            if (container[i] >= l1 && container[i] <= l2) {
-                m -= 1;
-                for (j = i; j < m; j++) {
+        int m;
+        while (i <= container.length) {
+            if (i >= l1 && i <= l2) {
+                for (j = l1; j < container.length -1; j++) {
                     container[j] = container[j + 1];
-                }
+                } i++;
             } else {
                 i += 1;
             }
         }
-        for (i = m; i < container.length; i++) {
+        /*for (i = m; i < container.length; i++) {
             container[i] = 0;
+        }*/
+        m = container.length - ((l2 - l1) + 1);
+        for (i = 0; i < m; i++) {
+            message = message + container[i] + " ";
         }
-        System.out.println("Откорректированный массив содержит элементы: ");
-                for (i = 0; i < container.length; i++) {
-                    System.out.print(container[i] + " ");
-                    }
-        System.out.println();
+        return message;
     }
     static  int main2_4_6(int[] container) {
         int sumNumber = 0;
