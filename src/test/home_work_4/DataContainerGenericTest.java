@@ -16,6 +16,8 @@ public class DataContainerGenericTest {
       Assertions.assertEquals(answer, "Привет");
    }
 
+
+   @DisplayName("Добавление NULL в контейнер")
    @Test
    public void testAddNull(){
       DataContainer<String> container = new DataContainer<>(new String[0]);
@@ -24,6 +26,7 @@ public class DataContainerGenericTest {
 
    }
 
+   @DisplayName("Удаление по индексу")
    @Test
    public void testDeieteByIndex(){
       DataContainer<String> container = new DataContainer<>(new String[0]);
@@ -33,7 +36,7 @@ public class DataContainerGenericTest {
        Assertions.assertNull(answer);
    }
 
-
+   @DisplayName("Удаление по элементу")
    @Test
    public void testDeieteByItem(){
       DataContainer<String> container = new DataContainer<>(new String[0]);
