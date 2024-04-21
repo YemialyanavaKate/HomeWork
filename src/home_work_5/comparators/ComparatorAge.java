@@ -1,23 +1,13 @@
 package home_work_5.comparators;
 
+import home_work_5.dto.Animal;
+
 import java.util.Comparator;
 
-public class ComparatorAge implements Comparator<Integer> {
+public class ComparatorAge implements Comparator<Animal> {
+
     @Override
-    public int compare(Integer o1, Integer o2) {
-      /*  if(o1 == null && o2 == null){
-            return 0;
-        }
-
-        if(o1 == null && o2 != null){
-            return -1;
-        }
-
-        if(o1 != null && o2 == null){
-            return 1;
-        }*/
-
-        return o1 - o2;
+    public int compare(Animal o1, Animal o2) {
+        return o1.getAge() - o2.getAge();
     }
-
 }

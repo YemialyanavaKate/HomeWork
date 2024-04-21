@@ -1,5 +1,7 @@
 package home_work_5.dto;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
 
 public class Animal {
@@ -31,6 +33,7 @@ public class Animal {
     public int hashCode() {
         return Objects.hash(age, nick);
     }
+
 
     @Override
     public String toString() {
