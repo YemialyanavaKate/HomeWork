@@ -4,13 +4,12 @@ import home_work_5.dto.Animal;
 import home_work_5.dto.Person;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MapUtils {
 
-    public static Map<String, Person> PersonRandome(int size) {
+    public static Map<String, Person> personRandome(int size) {
         Map<String, Person> map = new HashMap<>();
 
         ThreadLocalRandom rnd = ThreadLocalRandom.current();
@@ -26,7 +25,7 @@ public class MapUtils {
         return map;
     }
 
-    public static Map<String, Animal> AnimalRandome(int size) {
+    public static Map<String, Animal> animalRandome(int size) {
         Map<String, Animal> map = new HashMap<>();
 
         ThreadLocalRandom rnd = ThreadLocalRandom.current();

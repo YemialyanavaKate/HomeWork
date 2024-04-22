@@ -10,7 +10,7 @@ import java.util.*;
 
 public class MainAnimal {
     public static void main(String[] args) {
-        Map<String, Animal> mapWithAnimal = MapUtils.AnimalRandome(5);
+        Map<String, Animal> mapWithAnimal = MapUtils.animalRandome(5);
         System.out.println(mapWithAnimal);
 
         Collection<Animal> values = mapWithAnimal.values();

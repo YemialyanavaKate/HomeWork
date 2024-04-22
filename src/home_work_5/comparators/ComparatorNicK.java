@@ -21,11 +21,4 @@ public class ComparatorNicK implements Comparator<Animal> {
 
         return o1.getNick().compareTo(o2.getNick());
     }
-
-    /*@Override
-    public int compare(Animal o1, Animal o2) {
-        char firstCharO1 = o1.charAt(0);
-        char firstCharO2 = o2.charAt(0);
-        return (int) firstCharO1 - (int) firstCharO2;
-    }*/
 }
