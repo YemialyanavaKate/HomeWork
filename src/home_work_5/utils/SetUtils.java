@@ -3,6 +3,8 @@ package home_work_5.utils;
 import home_work_5.dto.Animal;
 import home_work_5.dto.Person;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -48,26 +50,27 @@ public class SetUtils {
         return arrNickAnimal[i];
     }
 
-    public static List<Animal> AnimalListRandome(int size) {
+    public static Set<Animal> AnimalSetRandome(int size) throws FileNotFoundException {
 
-        List<Animal> list = new ArrayList<>();
+        Set<Animal> data = new TreeSet<>();
+
+        FileReader reader = new FileReader("Nick.txt");
 
         ThreadLocalRandom rnd = ThreadLocalRandom.current();
 
-        String[] arrNickAnimal = new String[5];
-        arrNickAnimal[0] = "Арнольд";
-        arrNickAnimal[1] = "Барсик";
-        arrNickAnimal[2] = "Тина";
-        arrNickAnimal[3] = "Мира";
-        arrNickAnimal[4] = "Брюс";
+        String[] arrNickAnimal = new String[6];
+        int c;
+        for (int j = 0; j < arrNickAnimal.length; j++) {
+           // arrNickAnimal[j] = reader.readLine();
+        }
 
         for (int i = 0; i < size; i++) {
             Animal animal = new Animal(
                     rnd.nextInt(1, 15),
                     randomNickOrName(arrNickAnimal)
             );
-            list.add(i, animal);
+            data.add(animal);
         }
-        return list;
+        return data;
     }
 }
