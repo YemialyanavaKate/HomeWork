@@ -3,13 +3,15 @@ package home_work_5.utils;
 import home_work_5.dto.Animal;
 import home_work_5.dto.Person;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SetUtils {
-    public static Set<Person> personHashSetRandome(int size) {
+    public static Set<Person> personHashSetRandom(int size) {
         Set<Person> data = new HashSet<>();
 
         ThreadLocalRandom rnd = ThreadLocalRandom.current();
@@ -35,34 +37,42 @@ public class SetUtils {
     }
 
     public static String randomNumberABC(String abc) {
-        String nickRandomABC = "";
+        StringBuilder nickRandomABC = new StringBuilder();
 
         for (int i = 0; i <= 6; i++) {
             Random rand = new Random();
             int j = rand.nextInt(25);
-            nickRandomABC += abc.charAt(j);
-        } return nickRandomABC;
+            nickRandomABC.append(abc.charAt(j));
+        } return nickRandomABC.toString();
     }
 
-    public static String randomNickOrName(String arrNickAnimal[]){
+    public static String randomNickOrName(String[] arrNickAnimal){
         Random rand = new Random();
         int i = rand.nextInt(5);
         return arrNickAnimal[i];
     }
 
-    public static Set<Animal> AnimalSetRandome(int size) throws FileNotFoundException {
+    public static Set<Animal> animalTreeSetRandom(int size) throws FileNotFoundException {
 
         Set<Animal> data = new TreeSet<>();
 
-        FileReader reader = new FileReader("Nick.txt");
-
-        ThreadLocalRandom rnd = ThreadLocalRandom.current();
-
         String[] arrNickAnimal = new String[6];
-        int c;
-        for (int j = 0; j < arrNickAnimal.length; j++) {
-           // arrNickAnimal[j] = reader.readLine();
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("Nick.txt"));
+
+            String line;
+            for (int j = 0; j < arrNickAnimal.length; j++) {
+                while ((line = reader.readLine()) != null){
+                    arrNickAnimal[j] = line;
+                }
+            }
+        } catch (FileNotFoundException e){
+            System.out.println("Нет такого файла");
+        } catch (IOException e){
+            System.out.println("Ошибка чтения файла");
         }
+        ThreadLocalRandom rnd = ThreadLocalRandom.current();
 
         for (int i = 0; i < size; i++) {
             Animal animal = new Animal(

@@ -1,15 +1,12 @@
 package home_work_5;
 
-import home_work_5.comparators.ComparatorNicK;
 import home_work_5.comparators.ComparatorPassword;
-import home_work_5.dto.Animal;
 import home_work_5.dto.Person;
 import home_work_5.utils.ListUtils;
-import home_work_5.utils.MapUtils;
 import home_work_5.utils.SetUtils;
+import home_work_5.utils.SortUtils;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class MainPerson {
     public static void main(String[] args) {
@@ -59,7 +56,7 @@ public class MainPerson {
         System.out.println("Для Persons в HashSet");
 
         long start4 = System.currentTimeMillis();
-        Set<Person> data1 = SetUtils.personHashSetRandome(1_000_000);
+        Set<Person> data1 = SetUtils.personHashSetRandom(1_000_000);
         long stop4 = System.currentTimeMillis();
         System.out.println("Операция: "  + operation1 + ". Заняла " + (stop4 - start4) + " мс");
 
