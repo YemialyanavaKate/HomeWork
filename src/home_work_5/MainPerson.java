@@ -1,5 +1,7 @@
 package home_work_5;
 
+import home_work_5.comparators.ComparatorNicK;
+import home_work_5.comparators.ComparatorNickPerson;
 import home_work_5.comparators.ComparatorPassword;
 import home_work_5.dto.Person;
 import home_work_5.utils.ListUtils;
@@ -25,8 +27,10 @@ public class MainPerson {
             System.out.println(datum);
         }
         System.out.println("____________________");*/
+
         list2.sort(new ComparatorPassword());
-        SortUtils.sort(new ComparatorPassword(), list2);
+        list2.sort(new ComparatorNickPerson());
+
         /*System.out.println("После сортировки");
         for (Person datum : list2) {
             System.out.println(datum);
@@ -60,10 +64,20 @@ public class MainPerson {
         long stop4 = System.currentTimeMillis();
         System.out.println("Операция: "  + operation1 + ". Заняла " + (stop4 - start4) + " мс");
 
+        List<Person> listSet = new ArrayList<>(data1);
 
-        //data1.stream().sorted().collect(Collectors.toSet());
-        //Collections.sort(data1, new ComparatorPassword());
+        /*System.out.println("До сортировки");
+        for (Person datum : listSet) {
+            System.out.println(datum);
+        }
+        System.out.println("____________________");*/
 
+        listSet.sort(new ComparatorNickPerson());
+        /*SortUtils.sort(new ComparatorPassword(), listSet);
+        System.out.println("После сортировки");
+        for (Person datum : listSet) {
+            System.out.println(datum);
+        }*/
 
         long start5 = System.currentTimeMillis();
         Iterator<Person> iteratorSetPerson = data1.iterator();
