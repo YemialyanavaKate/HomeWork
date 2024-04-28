@@ -1,12 +1,11 @@
 package home_work_5.utils;
 
+import home_work_5.comparators.ComparatorAgeAndNickAnimal;
 import home_work_5.dto.Animal;
 import home_work_5.dto.Person;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -54,16 +53,15 @@ public class SetUtils {
 
     public static Set<Animal> animalTreeSetRandom(int size) throws FileNotFoundException {
 
-        Set<Animal> data = new TreeSet<>();
+        Set<Animal> data = new TreeSet<>(ComparatorAgeAndNickAnimal::compare);
 
         String[] arrNickAnimal = new String[6];
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader("Nick.txt"));
-
             String line;
             for (int j = 0; j < arrNickAnimal.length; j++) {
-                while ((line = reader.readLine()) != null){
+                if ((line = reader.readLine()) != null){
                     arrNickAnimal[j] = line;
                 }
             }

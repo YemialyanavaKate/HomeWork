@@ -1,6 +1,7 @@
 package home_work_5;
 
 import home_work_5.comparators.ComparatorAge;
+import home_work_5.comparators.ComparatorAgeAndNickAnimal;
 import home_work_5.comparators.ComparatorNicK;
 import home_work_5.comparators.ComparatorPassword;
 import home_work_5.dto.Animal;
@@ -27,21 +28,22 @@ public class MainAnimal {
         String operation1 = "Заполнение коллекции ArrayList";
         long start1 = System.currentTimeMillis();
 
-        List<Animal> list1 = ListUtils.AnimalListRandome(1_000_000);
+        List<Animal> list1 = ListUtils.AnimalListRandome(10);
         long stop1 = System.currentTimeMillis();
         System.out.println("Операция: "  + operation1 + ". Заняла " + (stop1 - start1) + " мс");
 
-        /*System.out.println("До сортировки");
+        System.out.println("До сортировки");
         for (Animal datum : list1) {
             System.out.println(datum);
         }
-        System.out.println("____________________");*/
+        System.out.println("____________________");
         list1.sort(new ComparatorAge());
         list1.sort(new ComparatorNicK());
-        /*System.out.println("После сортировки");
+        //list1.sort(new ComparatorAgeAndNickAnimal());
+        System.out.println("После сортировки");
         for (Animal datum : list1) {
             System.out.println(datum);
-        }*/
+        }
 
         String operation2 = "Итерирование коллекции";
         long start2 = System.currentTimeMillis();
@@ -70,12 +72,19 @@ public class MainAnimal {
         long stop4 = System.currentTimeMillis();
         System.out.println("Операция: "  + operation1 + ". Заняла " + (stop4 - start4) + " мс");
 
-        for (Animal datum : list1) {
+        System.out.println("До сортировки");
+        for (Animal datum : data1) {
             System.out.println(datum);
         }
-       // SortUtils.sortSet(new ComparatorAge(), data1);
+        System.out.println("____________________");
+        List<Animal> listSet = new ArrayList<>(data1);
 
+        listSet.sort(new ComparatorNicK());
 
+        System.out.println("После сортировки");
+        for (Animal datum : data1) {
+            System.out.println(datum);
+        }
         long start5 = System.currentTimeMillis();
         Iterator<Animal> iteratorSetAnimal = data1.iterator();
         while (iteratorSetAnimal.hasNext()){
