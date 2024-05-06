@@ -21,12 +21,16 @@ public class Main2_new {
                 builder.append(line);
             }
             str = builder.toString();
+            str = str.replaceAll("\\p{Punct}", "");
+            str = str.replaceAll(" {2}", " ");
+            str = str.replaceAll("\\n", "");
             words = str.split(" ");
             int count = 1;
+
             for (int i = 0; i < words.length - 1; i++) {
-                    if (!map.containsKey(words[i])){
+                    if (words[i] != " " && !map.containsKey(words[i])){
                         map.put(words[i],count);
-                    } else {
+                    } else if (words[i] != " ") {
                         int countWord = map.get(words[i]);
                         countWord++;
                         map.put(words[i],countWord);
@@ -38,6 +42,8 @@ public class Main2_new {
         }
 
         List <Map.Entry<String, Integer>> valuesList = new ArrayList(map.entrySet());
+        valuesList.remove(null);
+
         Collections.sort(valuesList, new Comparator<Map.Entry<String, Integer>>() {
 
         @Override
@@ -50,7 +56,6 @@ public class Main2_new {
 
             System.out.println(valuesList.get(i));
         }
-
 
     }
 }

@@ -1,6 +1,6 @@
-Main1_new - класс, работа с Set (задание 2);
-Main2_new - класс, работа с Map (задание 3);
-MainEasySearch - использование EasySearch (задание 5);
+Main1_new - класс, работа с Set (задание 2.1);
+Main2_new - класс, работа с Map (задание 2.2);
+MainSearch - использование реализаций интерфейса ISearchEngine (задание 5);
 
 В пакете api создан класc
 ISearchEngine - интерфейс (задание 3);
