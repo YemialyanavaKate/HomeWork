@@ -11,7 +11,9 @@ public class RegExSearch implements ISearchEngine {
     @Override
     public long search(String text, String word) {
         int counter = 0;
-
+        if (word.isEmpty()){
+            return -1;
+        }
         try {
             Pattern pattern = Pattern.compile(word);
             Matcher matcher = pattern.matcher(text);

@@ -8,11 +8,14 @@ public class EasySearch implements ISearchEngine {
     public long search(String text, String word) {
         int index = 0;
         int counter = 0;
+        if (word.isEmpty()){
+            return -1;
+        }
 
          while (index < text.length() && index != -1) {
             index = text.indexOf(word, index);
             if (index == -1 && counter == 0){
-                System.out.println("В тексте нет такого слова");
+                //System.out.println("В тексте нет такого слова");
                 return -1;
             } else
                 if (index == -1){

@@ -57,9 +57,25 @@ public class testEasySearch {
         Assertions.assertEquals(-1,counter);
 
     }
-    @DisplayName("Проверка слова из одной буквы")
+    @DisplayName("Проверка ввода пустой строки")
     @Test
     public void testWord7(){
+        EasySearch searchInText = new EasySearch();
+        long counter = searchInText.search("", "Mама");
+        Assertions.assertEquals(0,counter);
+
+    }
+    @DisplayName("Проверка ввода пустого слова для поиска")
+    @Test
+    public void testWord8(){
+        EasySearch searchInText = new EasySearch();
+        long counter = searchInText.search("Мама мыла раму", "");
+        Assertions.assertEquals(-1,counter);
+
+    }
+    @DisplayName("Проверка слова из одной буквы")
+    @Test
+    public void testWord9(){
         EasySearch searchInText = new EasySearch();
         long counter = searchInText.search("Война и мир. Война и мир.", "и");
         Assertions.assertEquals(2,counter);

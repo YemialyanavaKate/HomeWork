@@ -23,7 +23,7 @@ public class Main2_new {
             str = builder.toString();
             str = str.replaceAll("\\p{Punct}", "");
             str = str.replaceAll(" {2}", " ");
-            str = str.replaceAll("\\n", "");
+            str = str.replaceAll("\\s+", " ");
             words = str.split(" ");
             int count = 1;
 
