@@ -48,9 +48,9 @@ public class MainSearch {
             print(peace, z2);
 
             SearchEnginePunctuationNormalizer counter3 = new SearchEnginePunctuationNormalizer(new RegExSearch());
-            long x3 = counter2.search(str, war);
-            long y3 = counter2.search(str, and);
-            long z3 = counter2.search(str, peace);
+            long x3 = counter3.search(str, war);
+            long y3 = counter3.search(str, and);
+            long z3 = counter3.search(str, peace);
 
             System.out.println("SearchEnginePunctuationNormalizer посчитал:");
             print(war, x3);
