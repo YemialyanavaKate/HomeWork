@@ -1,6 +1,8 @@
-package control.control1;
+package control.control1.shop.products;
 
-import control.control1.api.IProduct;
+
+
+import control.control1.shop.products.api.IProduct;
 
 import java.math.BigDecimal;
 
@@ -10,6 +12,14 @@ public class BasicProduct implements IProduct {
     public BasicProduct(String name, BigDecimal price){
     this.name = name;
     this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
     }
 
     @Override
