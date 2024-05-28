@@ -5,7 +5,7 @@ public class Clock extends Thread {
         Clock clock = new Clock();
         clock.start();
 
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         clock.interrupt();
     }
 

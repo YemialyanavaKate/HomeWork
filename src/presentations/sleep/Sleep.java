@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Sleep {
     public static void main(String[] args) {
-        System.out.println("Засыпаю на 10 секунд");
+        System.out.println("Засыпаю на 5 секунд");
         try {
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
