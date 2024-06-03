@@ -1,10 +1,10 @@
-package control.control1.shop;
+package control1.control1.shop;
 
 
 
-import control.control1.shop.api.IShop;
-import control.control1.shop.api.IShopAdmin;
-import control.control1.shop.products.api.IProduct;
+import control1.control1.shop.api.IShop;
+import control1.control1.shop.api.IShopAdmin;
+import control1.control1.shop.products.api.IProduct;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

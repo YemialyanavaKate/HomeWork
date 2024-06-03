@@ -1,6 +1,4 @@
-package control.control_task2;
-
-import control.control_task2.api.ICreature;
+package control1.control_task2;
 
 public class Box {
    /* public Box (Creature someCreature){

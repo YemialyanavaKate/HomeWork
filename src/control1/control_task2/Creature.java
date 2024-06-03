@@ -1,6 +1,6 @@
-package control.control_task2;
+package control1.control_task2;
 
-import control.control_task2.api.ICreature;
+import control1.control_task2.api.ICreature;
 
 public class Creature implements ICreature {
     private String name;

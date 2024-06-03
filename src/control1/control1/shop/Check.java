@@ -1,4 +1,4 @@
-package control.control1.shop;
+package control1.control1.shop;
 
 import java.math.BigDecimal;
 import java.util.List;

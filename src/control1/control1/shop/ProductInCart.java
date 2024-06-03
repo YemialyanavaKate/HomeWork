@@ -1,6 +1,6 @@
-package control.control1.shop;
+package control1.control1.shop;
 
-import control.control1.shop.products.api.IProduct;
+import control1.control1.shop.products.api.IProduct;
 
 public class ProductInCart {
     private IProduct product;

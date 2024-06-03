@@ -1,4 +1,4 @@
-package control.control_task2.api;
+package control1.control_task2.api;
 
 public interface ICreature{
     String getName();

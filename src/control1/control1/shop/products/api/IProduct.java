@@ -1,4 +1,4 @@
-package control.control1.shop.products.api;
+package control1.control1.shop.products.api;
 
 import java.math.BigDecimal;
 

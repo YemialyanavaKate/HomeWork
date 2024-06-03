@@ -11,6 +11,7 @@ public class Main {
         try{
             Thread.sleep(150);
             t.interrupt();
+            t.stop();
 
             Thread.sleep(150);
         }

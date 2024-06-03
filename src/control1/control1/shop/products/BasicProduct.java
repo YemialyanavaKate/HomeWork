@@ -1,8 +1,8 @@
-package control.control1.shop.products;
+package control1.control1.shop.products;
 
 
 
-import control.control1.shop.products.api.IProduct;
+import control1.control1.shop.products.api.IProduct;
 
 import java.math.BigDecimal;
 

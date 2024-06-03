@@ -1,4 +1,4 @@
-package control.control_task1;
+package control1.control_task1;
 
 public class ControlTask1 {
     public static int Choice (int a, int b, int c){

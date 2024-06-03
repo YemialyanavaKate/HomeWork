@@ -1,17 +1,16 @@
-package control.control1;
+package control1.control1;
 
 
-import control.control1.shop.Cart;
-import control.control1.shop.Check;
-import control.control1.shop.Shop;
-import control.control1.shop.api.IShop;
-import control.control1.shop.products.BasicProduct;
-import control.control1.shop.products.DamageProduct;
-import control.control1.shop.products.SaleProduct;
-import control.control1.shop.products.api.IProduct;
+import control1.control1.shop.Cart;
+import control1.control1.shop.Check;
+import control1.control1.shop.Shop;
+import control1.control1.shop.api.IShop;
+import control1.control1.shop.products.BasicProduct;
+import control1.control1.shop.products.DamageProduct;
+import control1.control1.shop.products.SaleProduct;
+import control1.control1.shop.products.api.IProduct;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 

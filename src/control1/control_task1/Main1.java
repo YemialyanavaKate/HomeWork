@@ -1,4 +1,4 @@
-package control.control_task1;
+package control1.control_task1;
 
 public class Main1 {
     public static void main(String[] args) {
