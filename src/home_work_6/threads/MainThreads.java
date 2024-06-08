@@ -1,7 +1,7 @@
 package home_work_6.threads;
 
 import home_work_6.dto.EasySearchNew;
-import home_work_6.threads.job.JobSearch;
+import home_work_6.threads.job.JobProduser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,55 +27,51 @@ public class MainThreads {
             dir =  choiceDir(nameDir);
         } while (!dir.exists());
 
-        String word = null;
+        File[] files = dir.listFiles();
 
-        List<File> files = List.of(Objects.requireNonNull(dir.listFiles()));
+        Queue<File> queue = new LinkedList<>();
+        assert files != null;
+        for (File file : files) {
+            queue.offer(file);
+        }
 
-        ExecutorService executor = Executors.newSingleThreadExecutor();
+        ExecutorService executor = Executors.newFixedThreadPool(31);
 
         List<Future<Long>> futures = new ArrayList<>();
-        for (File file : files) {
-            Callable<Long> job = new JobSearch(file);
-            Future<Long> future = executor.submit(job);
-
-            futures.add(future);
-        }
 
         long result = 0;
+        String word = null;
+        do {
+            try (FileWriter writer = new FileWriter("ResultSearch.txt", true)){
+                do {
+                    System.out.println("\nКакое слово будем искать в этих фаилах? (для выхода 'quit')");
+                    word = console.nextLine();
+                    for (File file : queue) {
+                        Callable<Long> job = new JobProduser(file, word);
+                        Future<Long> future = executor.submit(job);
 
-        for (Future<Long> future : futures) {
-            try {
-                result += future.get();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            } catch (ExecutionException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        System.out.println("Всего найдено слов " + result);
-
-
-            /*try (FileWriter writer = new FileWriter("ResultSearch.txt", true)){
-                    String text = Files.readString(Path.of(addressFile));
-                    EasySearchNew searchEngine = new EasySearchNew();
-
-                    do {
-                        System.out.println("\nКакое слово будем искать в тексте? (для выхода 'quit', для выбора другого фаила 'file')");
-                        word = console.nextLine();
-                        long count = searchEngine.search(text, word);
-                        if (!(word.equals("quit") || word.equals("file"))) {
-                            writer.write(nameFileRead + " - " + word + " - " + count + "\n");
+                        futures.add(future);
+                    }
+                    for (Future<Long> future : futures) {
+                        try {
+                            result += future.get();
+                            if (!(word.equals("quit") || word.equals("file"))) {
+                                writer.write(queue.peek() + " - " + word + " - " + result + "\n");
+                            }
+                        } catch (InterruptedException | ExecutionException e) {
+                            throw new RuntimeException(e);
                         }
                     }
-                    while (!(word.equals("quit") || word.equals("file")));
-
+                }
+                while (!(word.equals("quit")));
                 writer.flush();
             } catch (FileNotFoundException e){
                 System.out.println("Нет такого фаила");
             } catch (IOException e) {
                 System.out.println("Ошибка чтения фаила");
-            }*/
+            }
+        } while (!(word.equals("quit")));
+
         System.out.println("Результаты поиска в фаиле ResultSearch.txt");
         }
 
