@@ -1,13 +1,12 @@
 package control2;
 
-import control2.music.FabricPlaylist;
-import control2.music.FilterGanre;
-import control2.music.SongInPlaylist;
 /*import control2.music.fabricSong.PlayList;
 import control2.music.fabricSong.songLines;*/
+
+import control2.music.FilterGanre;
 import control2.music.fabricSong.Playlist;
 import control2.music.fabricSong.Song;
-import control2.music.fabricSong.api.ISong;
+import control2.music.filter.FilterGenre;
 import home_work_6.dto.EasySearchNew;
 
 import java.io.*;
@@ -15,8 +14,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Scanner;
+
 // "Songs.txt"
-public class MainPlaylist {
+public class MainPlaylistNew {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.println("Введите название плэйлиста, который будем создавать");
@@ -32,9 +32,12 @@ public class MainPlaylist {
         File file = new File(nameFile);
         String nameSong;
         String singer;
+        String genre;
+        String mood;
         String timeSong;
-        long count = 0;
+        long count;
         long number = 1;
+        Playlist playlist = new Playlist(namePlaylist, aboutPlaylist);
 
         try(FileWriter writer = new FileWriter("Playlist.txt")){
             writer.write("Название плэйлиста: " + namePlaylist + "\n" + "Описание плайлиста: " + aboutPlaylist + "\n");
@@ -42,32 +45,44 @@ public class MainPlaylist {
             String text = Files.readString(Path.of(nameFile));
             String line;
             System.out.println(text);
-            //FilterGanre filt = new FilterGanre();
-
+            Song song = null;
             do {
-                System.out.println("Какую песню добавим в плэйлист? (для выхода 'quit', для выбора другого фаила 'file')");
+                System.out.println("Какую песню добавим в плэйлист? (для выхода 'quit', для выбора сортировки по жанру 'genre', для выбора сортировки по настроению 'mood')");
                 nameSong = console.nextLine();
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 if (!(nameSong.equals("quit") || nameSong.equals("mood") || nameSong.equals("genre"))){
                 while ((line = reader.readLine()) != null) {
                     count = search.search(line, nameSong);
                     if (count > 0) {
-                        int x = line.indexOf(nameSong);
-                        singer = line.substring(0, x - 2);
-                        // timeSong - cитать знак ":" и записать одну цифру до и две после
-                        int y = line.indexOf(":");
-                        timeSong = line.substring(y-2);
-                        writer.write(number + ". " + singer + " - " + nameSong +
-                                timeSong + "\n");
+                        int indexNameSong = line.indexOf("\"") + 1;
+                        singer = line.substring(0, indexNameSong - 2);
+                        int indexTimeSong = line.indexOf(":");
+                        timeSong = line.substring(indexTimeSong - 1);
+                        int indexStartGenre = line.indexOf("\"", indexNameSong + 1);
+                        int indexStopGenre = line.indexOf("-");
+                        genre = line.substring(indexStartGenre + 1,indexStopGenre - 1);
+                        mood = line.substring(indexStopGenre + 2, indexTimeSong);
+                        nameSong = line.substring(indexNameSong, indexStartGenre);
+
+                        song = new Song(singer, nameSong, genre, mood, timeSong);
+
+                        writer.write(number + ". " + song + "\n");
                     }
                 }
                 }
+                if (song != null) {
+                    playlist.add(song);
+                }
                 number++;
-
             }
             while (!(nameSong.equals("quit") || nameSong.equals("mood") || nameSong.equals("genre")));
             writer.flush();
             System.out.println("Ваш плэйлист в фаиле Playlist.txt");
+
+            //FilterGanre filt = new FilterGanre(playList);
+          //  FilterGenre filt = new FilterGenre();
+           // filt.filterGenre(playlist.getSongsInPlaylist(), "pop");
+            System.out.println(playlist);
 
         } catch (FileNotFoundException e){
             System.out.println("Нет такого фаила");

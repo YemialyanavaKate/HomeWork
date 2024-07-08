@@ -5,7 +5,8 @@ import java.util.List;
 public interface ISong {
     String getNameSong();
     String getSinger();
-    int getTimeSong();
-
+    String getTimeSong();
+    String getGenre();
+    String getMood();
 
 }

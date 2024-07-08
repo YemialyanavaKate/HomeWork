@@ -10,9 +10,9 @@ public class Song implements ISong {
     private String genres;
     private String moods;
 
-    private int timeSong;
+    private String timeSong;
 
-    public Song(String singer, String nameSong, String genres, String moods, int timeSong) {
+    public Song(String singer, String nameSong, String genres, String moods, String timeSong) {
         this.singer = singer;
         this.nameSong = nameSong;
         this.genres = genres;
@@ -28,15 +28,15 @@ public class Song implements ISong {
         return nameSong;
     }
 
-    public String getGenres() {
+    public String getGenre() {
         return genres;
     }
 
-    public String getMoods() {
+    public String getMood() {
         return moods;
     }
 
-    public int getTimeSong() {
+    public String getTimeSong() {
         return timeSong;
     }
 

@@ -4,7 +4,7 @@ import home_work_6.api.ISearchEngine;
 
 public class EasySearchNew implements ISearchEngine {
     private final static char[] splitChar = {
-            ' ', '\n', ',', '.', '-', '!', '?'
+            ' ', '\n', ',', '.', '-', '!', '?', '"'
     };
     @Override
     public long search(String text, String word) {
@@ -35,7 +35,7 @@ public class EasySearchNew implements ISearchEngine {
                  charAfterIsSplit = isSplitChar2(text.charAt(indexNextCharAfterWord));
              }
 
-             if(charBeforeIsSplit && charAfterIsSplit){
+             if(charBeforeIsSplit && charAfterIsSplit && indexWord >= 0){
                  count++;
              }
 

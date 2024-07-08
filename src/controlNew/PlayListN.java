@@ -1,15 +1,15 @@
-package control2.music.fabricSong;
+package controlNew;
 
 import control2.music.SongInPlaylist;
 
 import java.util.List;
 
-public class PlayList {
+public class PlayListN {
     private String namePlaylist;
     private String aboutPlaylist;
     private List<SongInPlaylist> songLines;
 
-    public PlayList(String namePlaylist, String aboutPlaylist, List<SongInPlaylist> songLines) {
+    public PlayListN(String namePlaylist, String aboutPlaylist, List<SongInPlaylist> songLines) {
         this.namePlaylist = namePlaylist;
         this.aboutPlaylist = aboutPlaylist;
         this.songLines = songLines;

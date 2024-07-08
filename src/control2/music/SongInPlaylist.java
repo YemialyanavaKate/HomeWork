@@ -5,18 +5,25 @@ import control2.music.fabricSong.api.ISong;
 public class SongInPlaylist {
 
     private ISong song;
- //   private int count;
+    private String genre;
+    private String mood;
 
     public SongInPlaylist(ISong song) {
         this.song = song;
-       // this.count = count;
     }
 
     public ISong getSong() {
         return song;
     }
+    public String getGenre(){
+        return genre;
+    }
+    public String getMood(){
+        return mood;
+    }
 
-    /*public int getCount() {
-        return count;
-    }*/
+    @Override
+    public String toString() {
+        return " " + song.getNameSong() + " - " + song.getSinger() +" " + song.getTimeSong();
+    }
 }
