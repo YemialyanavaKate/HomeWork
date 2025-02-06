@@ -1,8 +1,5 @@
 package leetCode;
 
-import jdk.jshell.JShell;
-import patterns.singleton.mail.Mail;
-
 public class LC_1768 {
     public static void main(String[] args) {
         //String word1 = "ab";
